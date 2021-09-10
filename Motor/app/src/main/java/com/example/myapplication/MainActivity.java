@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean activar;
     Handler bluetoothIn;
     final int handlerState = 0;
-    Button Derecha,Conectar,Izquierda,desconectar;
+    Button apagar,Derecha,Conectar,Izquierda,desconectar;
     private ConnectedThread MyConexionBT;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         Conectar = findViewById(R.id.Conectar);
         Izquierda = findViewById(R.id.BtnIzquierda);
         desconectar = findViewById(R.id.Desconectar);
-
+        apagar = findViewById(R.id.Apagar);
 
         btAdapter = BluetoothAdapter.getDefaultAdapter();
         verificarBluetooth();
@@ -86,14 +86,21 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        apagar.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                try{
+                    MyConexionBT.write("2");
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        });
 
 
 
 
 
-    }
-    public void Apagar(View v){
-        MyConexionBT.write("2");
     }
 
     private BluetoothSocket createBluetoothSocket (BluetoothDevice device) throws IOException{
