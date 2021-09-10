@@ -19,7 +19,9 @@ void loop() {
       digitalWrite(Derecha, HIGH);
       digitalWrite(Izquierda, LOW);
     }
-    else if(Boton=='0'){
+    else{
+      if(Boton=='0'){
+    }
       digitalWrite(Izquierda, HIGH);
       digitalWrite(Derecha, LOW);
     }
