@@ -21,9 +21,13 @@ void loop() {
     }
     else{
       if(Boton=='0'){
-    }
       digitalWrite(Izquierda, HIGH);
       digitalWrite(Derecha, LOW);
+      }
+      else{
+        digitalWrite(Izquierda, LOW);
+        digitalWrite(Derecha, LOW);
+      }
     }
   }
 }
