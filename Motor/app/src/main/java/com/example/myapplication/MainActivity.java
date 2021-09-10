@@ -92,6 +92,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    public void Apagar(View v){
+        MyConexionBT.write("2");
+    }
 
     private BluetoothSocket createBluetoothSocket (BluetoothDevice device) throws IOException{
 
